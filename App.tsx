@@ -9,7 +9,7 @@ export default function App() {
     <Providers>
       <SafeAreaProvider>
         <MainNavigation />
-        <StatusBar backgroundColor="white" />
+        <StatusBar backgroundColor="#F3F2F8" />
       </SafeAreaProvider>
     </Providers>
   );

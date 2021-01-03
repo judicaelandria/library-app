@@ -4,6 +4,7 @@ import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import Book from "../screens/Book";
 import Loan from "../screens/Loan";
 import Reader from "../screens/Reader";
+import Board from "../screens/Board";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,16 +15,17 @@ export default function BottomNavigation() {
       tabBarOptions={{
         activeTintColor: "#009FE6",
         inactiveTintColor: "#BEC0D2",
-        tabStyle: {
-          maxHeight: 80,
-        },
+        // tabStyle: {
+        //   maxHeight: 80,
+        // },
         labelStyle: {
-          fontSize: 14,
+          fontSize: 11,
           paddingTop: 0,
+          marginTop: -6,
         },
         iconStyle: {
           paddingBottom: 0,
-          backgroundColor: 'red'
+          backgroundColor: "red",
         },
       }}
     >
@@ -31,7 +33,7 @@ export default function BottomNavigation() {
         name="Book"
         component={Book}
         options={{
-          tabBarLabel: "Livre",
+          tabBarLabel: "Livres",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="library" color={color} size={size} />
           ),
@@ -54,6 +56,20 @@ export default function BottomNavigation() {
           tabBarLabel: "Lecteur",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Board"
+        component={Board}
+        options={{
+          tabBarLabel: "Board",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="chart-line"
+              color={color}
+              size={size}
+            />
           ),
         }}
       />

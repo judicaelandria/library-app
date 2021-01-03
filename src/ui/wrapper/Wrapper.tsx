@@ -1,26 +1,28 @@
 import React from "react";
 import { Dimensions, StatusBar, StyleSheet, View } from "react-native";
 import Heading from "../heading";
+import { Ionicons } from "@expo/vector-icons";
+import Sheet from "../../components/Sheet";
 
 interface LayoutProps {
   children: React.ReactNode;
   title: string;
+  navigateTo: () => void;
 }
 
-const Wrapper = ({ children, title }: LayoutProps) => {
+const Wrapper = ({ children, title, navigateTo }: LayoutProps) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.header}>
-        <Heading title={title} size="big" weight="bold" />
-        <View
-          style={{
-            width: "94%",
-            height: 2,
-            backgroundColor: "black",
-            opacity: 0.4,
-            marginTop: 10,
-          }}
-        />
+        <View style={styles.head}>
+          <Heading title={title} size="medium" weight="bold" />
+          <Ionicons
+            name="add-circle-outline"
+            color="#191919"
+            size={28}
+            onPress={navigateTo}
+          />
+        </View>
       </View>
       <View style={styles.container}>{children}</View>
     </View>
@@ -30,10 +32,9 @@ const Wrapper = ({ children, title }: LayoutProps) => {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#F3F2F8",
     paddingTop: StatusBar.currentHeight,
-    paddingLeft: 15,
-    paddingRight: 15,
+    alignItems: "center",
   },
   header: {
     width: Dimensions.get("screen").width,
@@ -42,11 +43,24 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "flex-start",
     paddingTop: 20,
+    padding: 15,
+  },
+  head: {
+    display: "flex",
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingBottom: 0,
   },
   container: {
-    flex: 0.9,
+    // flex: 1,
     display: "flex",
-    paddingTop: 25,
+    width: "94%",
+    justifyContent: "center",
+    padding: 10,
+    borderRadius: 15,
+    backgroundColor: "#ffffff",
   },
 });
 

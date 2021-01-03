@@ -17,7 +17,7 @@ const Heading = ({
       fontSize: size == "small" ? 16 : size == "medium" ? 24 : 32,
       color: "black",
       fontWeight:
-        weight == "regular" ? "400" : weight == "medium" ? "700" : "bold",
+        weight == "regular" ? "400" : weight == "medium" ? "700" : "900",
     }}
   >
     {title}
