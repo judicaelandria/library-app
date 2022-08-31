@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, StatusBar, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  StatusBar,
+  Dimensions,
+  Platform,
+} from "react-native";
 import Heading from "../ui/heading";
 import { LineChart, ContributionGraph } from "react-native-chart-kit";
 import { useQuery } from "react-query";
@@ -64,7 +71,7 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: "#F3F2F8",
-    paddingTop: StatusBar.currentHeight,
+    paddingTop: Platform.OS === "ios" ? 30 : StatusBar.currentHeight,
     alignItems: "center",
   },
   header: {

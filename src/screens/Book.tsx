@@ -84,7 +84,7 @@ const Book = () => {
         {status == "loading" ? (
           <Activity />
         ) : // @ts-ignore
-        data?.length <= 0 ? (
+        !data?.length ? (
           <View
             style={{
               minHeight: 100,

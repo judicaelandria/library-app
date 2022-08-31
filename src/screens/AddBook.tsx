@@ -46,9 +46,8 @@ const AddBook = () => {
   React.useEffect(() => {
     (async () => {
       if (Platform.OS !== "web") {
-        const {
-          status,
-        } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        const { status } =
+          await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (status !== "granted") {
           alert(
             "Désolé, Nous avons besoins de permissions pour acceder au photos!"
@@ -160,12 +159,14 @@ const AddBook = () => {
             }}
             onPress={pickImage}
           >
-            <Text style={{ color: "#c4c4c4", fontSize: 13, marginLeft: 10 }}>
-              Ajouter une image
-            </Text>
-            <Text style={{ color: "#c4c4c4", fontSize: 13, marginLeft: 10 }}>
-              Format (PNG,JPEG,PNG)
-            </Text>
+            <>
+              <Text style={{ color: "#c4c4c4", fontSize: 13, marginLeft: 10 }}>
+                Ajouter une image
+              </Text>
+              <Text style={{ color: "#c4c4c4", fontSize: 13, marginLeft: 10 }}>
+                Format (PNG,JPEG,PNG)
+              </Text>
+            </>
           </TouchableNativeFeedback>
         </View>
       </View>

@@ -38,15 +38,19 @@ const Sheet = ({ sheetRef, onDelete, onUpdate }: Props) => {
   const renderContent = () => (
     <Animated.View style={styles.container}>
       <TouchableNativeFeedback style={styles.btnContainer} onPress={onUpdate}>
-        <MaterialIcons name="mode-edit" size={20} color="#191919" />
-        <Text style={styles.label}>Modifier</Text>
+        <>
+          <MaterialIcons name="mode-edit" size={20} color="#191919" />
+          <Text style={styles.label}>Modifier</Text>
+        </>
       </TouchableNativeFeedback>
       <TouchableNativeFeedback
         style={[styles.btnContainer, { marginTop: 5 }]}
         onPress={onDelete}
       >
-        <Ionicons name="trash" size={20} color="#191919" />
-        <Text style={styles.label}>Supprimer</Text>
+        <>
+          <Ionicons name="trash" size={20} color="#191919" />
+          <Text style={styles.label}>Supprimer</Text>
+        </>
       </TouchableNativeFeedback>
     </Animated.View>
   );

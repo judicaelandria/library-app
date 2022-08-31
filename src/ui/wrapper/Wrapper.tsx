@@ -1,8 +1,13 @@
 import React from "react";
-import { Dimensions, StatusBar, StyleSheet, View } from "react-native";
+import {
+  Dimensions,
+  Platform,
+  StatusBar,
+  StyleSheet,
+  View,
+} from "react-native";
 import Heading from "../heading";
 import { Ionicons } from "@expo/vector-icons";
-import Sheet from "../../components/Sheet";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -33,7 +38,7 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: "#F3F2F8",
-    paddingTop: StatusBar.currentHeight,
+    paddingTop: Platform.OS === "ios" ? 30 : StatusBar.currentHeight,
     alignItems: "center",
   },
   header: {

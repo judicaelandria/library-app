@@ -1,5 +1,5 @@
 import React from "react";
-import { StatusBar, StyleSheet, Text, View } from "react-native";
+import { Platform, StatusBar, StyleSheet, Text, View } from "react-native";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import { Button } from "../button";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    marginTop: StatusBar.currentHeight,
+    paddingTop: Platform.OS == "ios" ? 30 : StatusBar.currentHeight,
   },
   header: {
     display: "flex",

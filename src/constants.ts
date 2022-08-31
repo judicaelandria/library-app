@@ -1,3 +1,3 @@
 export const API_URL = __DEV__
-  ? "http://192.168.43.52:5000/api"
+  ? "http://localhost:5050/api"
   : "https://libraryback.herokuapp.com/api";

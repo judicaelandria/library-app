@@ -11,36 +11,42 @@ interface ReaderProps {
 const CardReader = ({ title, onPress }: ReaderProps) => {
   return (
     <TouchableNativeFeedback style={styles.container} onPress={onPress}>
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <>
         <View
           style={{
             display: "flex",
             flexDirection: "row",
-            justifyContent: "flex-start",
+            justifyContent: "space-between",
             alignItems: "center",
           }}
         >
-          <Ionicons name="person-circle-outline" size={32} color="#009FE6" />
-          <Text style={styles.title}>{title}</Text>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              alignItems: "center",
+            }}
+          >
+            <Ionicons name="person-circle-outline" size={32} color="#009FE6" />
+            <Text style={styles.title}>{title}</Text>
+          </View>
+          <MaterialIcons
+            name="keyboard-arrow-right"
+            size={22}
+            color="#C4C4C4"
+          />
         </View>
-        <MaterialIcons name="keyboard-arrow-right" size={22} color="#C4C4C4" />
-      </View>
-      <View
-        style={{
-          width: "100%",
-          height: 0.2,
-          backgroundColor: "#BBBBBD",
-          marginTop: 4,
-          opacity: 0.6
-        }}
-      />
+        <View
+          style={{
+            width: "100%",
+            height: 0.2,
+            backgroundColor: "#BBBBBD",
+            marginTop: 4,
+            opacity: 0.6,
+          }}
+        />
+      </>
     </TouchableNativeFeedback>
   );
 };
@@ -49,7 +55,7 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     display: "flex",
-    minHeight: 50
+    minHeight: 50,
   },
   title: {
     fontSize: 14,
